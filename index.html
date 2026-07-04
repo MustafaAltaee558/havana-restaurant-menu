@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>هافانا گرل بيجي - المنيو الإلكتروني الفاخر</title>
+    <meta name="description" content="تصفح منيو هافانا گرل في بيجي، واطلب وجباتك المفضلة من البرجر، الريزو، البيتزا، والكرسبي والزنجر مباشرة عبر الواتساب مع خدمة التوصيل السريع.">
+    <meta name="keywords" content="هافانا گرل, مطاعم بيجي, منيو هافانا, برجر بيجي, بيتزا بيجي, ريزو هافانا, توصيل في بيجي">
+    <meta name="author" content="Havana Grill">
+    <meta name="theme-color" content="#c91d1d">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="هافانا گرل بيجي - المنيو الإلكتروني الفاخر">
+    <meta property="og:description" content="اطلب أشهى الوجبات والبرجر والبيتزا من هافانا گرل في قلب بيجي مباشرة عبر الواتساب.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="هافانا گرل بيجي - المنيو الإلكتروني الفاخر">
+    <meta property="twitter:description" content="منيو تفاعلي مميز لطلب الوجبات السريعة والتوصيل في بيجي.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- الهيدر الفاخر -->
+        <header>
+            <div class="header-content">
+                <div class="brand-wrapper">
+                    <!-- شعار هافانا گرل الفاخر SVG -->
+                    <div class="logo-container" id="logo-icon">
+                        <svg viewBox="0 0 100 100" class="fill-current text-white">
+                            <path d="M20,55 C20,35 30,25 50,25 C70,25 80,35 80,55 C80,60 75,65 50,65 C25,65 20,60 20,55 Z" />
+                            <rect x="25" y="58" width="50" height="5" rx="2" fill="#d4af37" />
+                            <rect x="18" y="66" width="64" height="6" rx="3" fill="#ffffff" />
+                            <circle cx="35" cy="45" r="3" fill="#d4af37"/>
+                            <circle cx="50" cy="40" r="3" fill="#d4af37"/>
+                            <circle cx="65" cy="45" r="3" fill="#d4af37"/>
+                        </svg>
+                    </div>
+                    <div class="brand-info">
+                        <h1 id="txt-app-title">
+                            هافانا گرل
+                            <span class="city-badge" id="txt-city-badge">بيجي</span>
+                        </h1>
+                        <p class="live-status">
+                            <span class="status-dot"></span>
+                            <span id="txt-live-status">مفتوح الآن - يستقبل طلباتكم</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <!-- زر تبديل اللغة -->
+                    <button class="btn-circle btn-lang" id="btn-lang-toggle" onclick="toggleLanguage()">EN</button>
+                    <!-- زر الاتصال الهاتفي المباشر -->
+                    <a href="tel:07770022544" class="btn-circle" id="btn-call-direct" aria-label="Call Restaurant">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- البانر الترويجي الفاخر -->
+        <section class="promo-section">
+            <div class="promo-banner">
+                <span class="promo-badge" id="txt-promo-badge">عرض خاص بمناسبة الإطلاق</span>
+                <h2 class="promo-title" id="txt-promo-title">هافانا في قلب بيجي.. نكهة لا تُنسى!</h2>
+                <p class="promo-desc" id="txt-promo-desc">اطلب وجبتك المفضلة الآن واستمتع بخدمة التوصيل السريع إلى باب بيتك.</p>
+                <div class="promo-bg-icon">
+                    <i class="fa-solid fa-burger"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- شريط البحث المطور -->
+        <section class="search-section">
+            <div class="search-box">
+                <input type="text" class="search-input" id="search-input" placeholder="ابحث عن وجبتك المفضلة..." oninput="handleSearch(this.value)">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+        </section>
+
+        <!-- أزرار الأقسام (تصفح أفقي) -->
+        <section class="filter-section">
+            <h3 class="filter-section-title" id="txt-filter-title">تصفح أقسام المنيو</h3>
+            <div class="category-tabs-wrapper no-scrollbar" id="category-tabs">
+                <!-- سيتم ملؤها ديناميكياً من data.js -->
+            </div>
+            
+            <!-- أزرار فلترة إضافية (تاغات مخصصة) -->
+            <div class="tag-filters-wrapper no-scrollbar">
+                <button class="tag-filter-btn" id="tag-all" onclick="filterByTag('all')">
+                    <i class="fa-solid fa-list text-[10px]"></i> <span data-key="tag-all">الكل</span>
+                </button>
+                <button class="tag-filter-btn" id="tag-popular" onclick="filterByTag('popular')">
+                    <i class="fa-solid fa-fire text-[10px]"></i> <span data-key="tag-popular">الأكثر طلباً</span>
+                </button>
+                <button class="tag-filter-btn" id="tag-spicy" onclick="filterByTag('spicy')">
+                    <i class="fa-solid fa-pepper-hot text-[10px]"></i> <span data-key="tag-spicy">حار سبايسي</span>
+                </button>
+                <button class="tag-filter-btn" id="tag-value" onclick="filterByTag('value')">
+                    <i class="fa-solid fa-tags text-[10px]"></i> <span data-key="tag-value">وجبات توفير</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- قائمة الطعام الكلية للوجبات -->
+        <main>
+            <div class="menu-items-grid" id="menu-items-container">
+                <!-- سيتم توليد الوجبات ديناميكياً بواسطة الجافاسكربت -->
+            </div>
+        </main>
+
+        <!-- شريط السلة العائم بالأسفل -->
+        <div class="cart-bar-fixed" id="cart-bar">
+            <div class="cart-bar-inner">
+                <div class="cart-bar-info">
+                    <div class="cart-bar-icon-container">
+                        <i class="fa-solid fa-shopping-basket"></i>
+                        <span class="cart-bar-badge" id="cart-badge-count">0</span>
+                    </div>
+                    <div class="cart-bar-texts">
+                        <span class="cart-bar-label" id="txt-cart-label">الحساب الإجمالي</span>
+                        <span class="cart-bar-price" id="cart-total-price">0 د.ع</span>
+                    </div>
+                </div>
+                
+                <button class="btn-checkout" onclick="openCheckoutModal()">
+                    <span id="txt-btn-checkout">مراجعة وتأكيد الطلب</span>
+                    <i class="fa-solid fa-arrow-left" id="checkout-arrow"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 1. نافذة تفاصيل الوجبة المنبثقة (Meal Details Modal) -->
+    <div class="modal-overlay" id="meal-details-modal" onclick="closeModalOnOverlay(event, 'meal-details-modal')">
+        <div class="modal-content">
+            <div class="modal-header-nav">
+                <h3 class="modal-header-title" id="details-modal-title">تفاصيل الوجبة</h3>
+                <button class="modal-close-btn" onclick="closeModal('meal-details-modal')">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body" id="details-modal-body">
+                <!-- محتوى تفاصيل الوجبة سيضاف ديناميكياً -->
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn-modal-cancel" id="txt-btn-close-details" onclick="closeModal('meal-details-modal')">إغلاق</button>
+                <button class="btn-modal-action" id="btn-add-from-details" onclick="addCurrentItemFromDetails()">إضافة للسلة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. نافذة مراجعة وتأكيد الطلب المنبثقة (Checkout Modal) -->
+    <div class="modal-overlay" id="checkout-modal" onclick="closeModalOnOverlay(event, 'checkout-modal')">
+        <div class="modal-content">
+            <div class="modal-header-nav">
+                <h3 class="modal-header-title" id="txt-checkout-title">🛍️ مراجعة وتأكيد طلبك</h3>
+                <button class="modal-close-btn" onclick="closeModal('checkout-modal')">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- ملخص السلة -->
+                <div>
+                    <h4 class="checkout-label" id="txt-checkout-summary-title">📌 سلتك الحالية:</h4>
+                    <div class="checkout-cart-summary" id="checkout-cart-items">
+                        <!-- عناصر السلة -->
+                    </div>
+                </div>
+
+                <!-- استمارة معلومات الزبون -->
+                <div class="checkout-form-group">
+                    <label class="checkout-label" for="customer-name"><span id="lbl-name">الاسم الكامل</span> <span>*</span></label>
+                    <input type="text" id="customer-name" class="checkout-input" placeholder="اكتب اسمك الثلاثي">
+                </div>
+
+                <div class="checkout-form-group">
+                    <label class="checkout-label" for="customer-phone"><span id="lbl-phone">رقم الموبايل</span> <span>*</span></label>
+                    <input type="tel" id="customer-phone" class="checkout-input text-left" placeholder="077XXXXXXXX" dir="ltr">
+                </div>
+
+                <div class="checkout-form-group">
+                    <label class="checkout-label" for="customer-address"><span id="lbl-address">العنوان بالتفصيل</span> <span>*</span></label>
+                    <input type="text" id="customer-address" class="checkout-input" placeholder="مثال: بيجي - الحي العسكري - قرب مسجد الهدى">
+                </div>
+
+                <div class="checkout-form-group">
+                    <label class="checkout-label" for="customer-notes"><span id="lbl-notes">ملاحظات إضافية (اختياري)</span></label>
+                    <input type="text" id="customer-notes" class="checkout-input" placeholder="بدون بصل، كثر كاتشب، الخ...">
+                </div>
+
+                <!-- تفاصيل الحساب الكلية -->
+                <div class="price-summary-box">
+                    <div class="price-summary-row">
+                        <span id="txt-summary-subtotal">مجموع الوجبات:</span>
+                        <span id="checkout-subtotal">0 د.ع</span>
+                    </div>
+                    <div class="price-summary-row">
+                        <span id="txt-summary-delivery">خدمة التوصيل لبيجي:</span>
+                        <span id="checkout-delivery">2,000 د.ع</span>
+                    </div>
+                    <div class="price-summary-row total">
+                        <span id="txt-summary-total">المجموع الكلي للحساب:</span>
+                        <span id="checkout-grand-total" class="grand-total-val">0 د.ع</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn-modal-cancel" id="txt-btn-modify-order" onclick="closeModal('checkout-modal')">تعديل الطلب</button>
+                <button class="btn-modal-action" id="btn-proceed-to-receipt" onclick="proceedToReceipt()" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);">
+                    <span id="txt-btn-generate-receipt">عرض الفاتورة وتأكيدها</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. نافذة الفاتورة البصرية النهائية (Visual Receipt Modal) -->
+    <div class="modal-overlay" id="receipt-modal" onclick="closeModalOnOverlay(event, 'receipt-modal')">
+        <div class="modal-content" style="max-height: 90vh;">
+            <div class="modal-header-nav" style="background: #000; border-bottom: 1px solid var(--accent-gold);">
+                <h3 class="modal-header-title" id="txt-receipt-modal-title" style="color: var(--accent-gold);">🧾 فاتورة طلبك البصرية</h3>
+                <button class="modal-close-btn" onclick="closeModal('receipt-modal')">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body" style="background-color: #111;">
+                
+                <!-- حاوية الفاتورة الجذابة (التي يمكن تصويرها للشاشة) -->
+                <div class="receipt-visual-wrapper" id="receipt-capture-area">
+                    <div class="receipt-header">
+                        <div class="receipt-logo">HAVANA</div>
+                        <h2>هافانا گرل - بيجي</h2>
+                        <p>هاتف التوصيل: 07770022544</p>
+                        <p id="receipt-date-time">التاريخ والوقت: --/--/---- --:--</p>
+                    </div>
+                    
+                    <div class="receipt-meta-grid">
+                        <div>
+                            <span id="rec-lbl-name">الزبون:</span>
+                            <span id="receipt-client-name">-</span>
+                        </div>
+                        <div>
+                            <span id="rec-lbl-phone">الهاتف:</span>
+                            <span id="receipt-client-phone">-</span>
+                        </div>
+                        <div style="grid-column: span 2; margin-top: 0.25rem;">
+                            <span id="rec-lbl-address">العنوان:</span>
+                            <span id="receipt-client-address">-</span>
+                        </div>
+                        <div style="grid-column: span 2; margin-top: 0.25rem;" id="receipt-client-notes-wrapper">
+                            <span id="rec-lbl-notes">ملاحظات:</span>
+                            <span id="receipt-client-notes">-</span>
+                        </div>
+                    </div>
+                    
+                    <table class="receipt-table">
+                        <thead>
+                            <tr>
+                                <th style="text-align: right;" id="th-item">الوجبة</th>
+                                <th style="text-align: center; width: 40px;" id="th-qty">العدد</th>
+                                <th style="text-align: left; width: 80px;" id="th-price">السعر</th>
+                            </tr>
+                        </thead>
+                        <tbody id="receipt-table-body">
+                            <!-- صفوف الوجبات -->
+                        </tbody>
+                    </table>
+                    
+                    <div class="receipt-table-totals">
+                        <div class="receipt-total-row">
+                            <span id="rec-lbl-subtotal">مجموع المواد:</span>
+                            <span id="receipt-subtotal">0 د.ع</span>
+                        </div>
+                        <div class="receipt-total-row">
+                            <span id="rec-lbl-delivery">خدمة التوصيل:</span>
+                            <span id="receipt-delivery">2,000 د.ع</span>
+                        </div>
+                        <div class="receipt-total-row final">
+                            <span id="rec-lbl-grandtotal">المجموع النهائي:</span>
+                            <span id="receipt-grandtotal">0 د.ع</span>
+                        </div>
+                    </div>
+                    
+                    <div class="receipt-footer-notes">
+                        <p id="rec-txt-thanks">❤️ شكراً لاختياركم هافانا گرل بيجي - بالعافية مقدماً ❤️</p>
+                        <p style="font-size: 0.5rem; margin-top: 0.25rem; color: #888;">تم إنشاء الفاتورة إلكترونياً عبر موقع هافانا</p>
+                    </div>
+                </div>
+                
+                <!-- أزرار الإجراءات النهائية -->
+                <button class="btn-whatsapp-send" onclick="submitOrderToWhatsApp()">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span id="txt-btn-confirm-whatsapp">تأكيد وإرسال للواتساب</span>
+                </button>
+                
+                <button class="btn-download-receipt" onclick="printReceipt()">
+                    <i class="fa-solid fa-print"></i>
+                    <span id="txt-btn-print">تحميل / طباعة الفاتورة</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
