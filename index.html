@@ -3,326 +3,1340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هافانا گرل بيجي - المنيو الإلكتروني السحابي الفاخر</title>
     
     <!-- SEO Optimization -->
-    <title>هافانا گرل بيجي - المنيو الإلكتروني الفاخر</title>
     <meta name="description" content="تصفح منيو هافانا گرل في بيجي، واطلب وجباتك المفضلة من البرجر، الريزو، البيتزا، والكرسبي والزنجر مباشرة عبر الواتساب مع خدمة التوصيل السريع.">
     <meta name="keywords" content="هافانا گرل, مطاعم بيجي, منيو هافانا, برجر بيجي, بيتزا بيجي, ريزو هافانا, توصيل في بيجي">
     <meta name="author" content="Havana Grill">
-    <meta name="theme-color" content="#c91d1d">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="هافانا گرل بيجي - المنيو الإلكتروني الفاخر">
-    <meta property="og:description" content="اطلب أشهى الوجبات والبرجر والبيتزا من هافانا گرل في قلب بيجي مباشرة عبر الواتساب.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="هافانا گرل بيجي - المنيو الإلكتروني الفاخر">
-    <meta property="twitter:description" content="منيو تفاعلي مميز لطلب الوجبات السريعة والتوصيل في بيجي.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80">
+    <meta name="theme-color" content="#801123">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css">
-    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        havana: {
+                            red: '#801123', /* اللون الماروني العنابي الرسمي للبراند */
+                            darkRed: '#540916',
+                            gold: '#d4af37',
+                            black: '#0d0d0d',
+                            card: '#161616',
+                            input: '#1f1f1f',
+                            border: '#2a2a2a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #0d0d0d;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* حركات الشاشة الترحيبية */
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.04); opacity: 1; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 3s infinite ease-in-out;
+        }
+        @keyframes fade-out {
+            from { opacity: 1; visibility: visible; }
+            to { opacity: 0; visibility: hidden; }
+        }
+        .fade-out-screen {
+            animation: fade-out 0.6s forwards ease-in-out;
+        }
+        /* كلاسات الأنيميشن للمودال */
+        @keyframes scale-up {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .animate-scale-up {
+            animation: scale-up 0.25s forwards cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        /* مظهر البطاقات وحركة الظل */
+        .premium-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .premium-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(128, 17, 35, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+    </style>
 </head>
-<body>
+<body class="text-gray-200 min-h-screen flex flex-col pb-28">
 
-    <div class="app-container">
-        
-        <!-- الهيدر الفاخر -->
-        <header>
-            <div class="header-content">
-                <div class="brand-wrapper">
-                    <!-- شعار هافانا گرل الفاخر SVG -->
-                    <div class="logo-container" id="logo-icon">
-                        <svg viewBox="0 0 100 100" class="fill-current text-white">
-                            <path d="M20,55 C20,35 30,25 50,25 C70,25 80,35 80,55 C80,60 75,65 50,65 C25,65 20,60 20,55 Z" />
-                            <rect x="25" y="58" width="50" height="5" rx="2" fill="#d4af37" />
-                            <rect x="18" y="66" width="64" height="6" rx="3" fill="#ffffff" />
-                            <circle cx="35" cy="45" r="3" fill="#d4af37"/>
-                            <circle cx="50" cy="40" r="3" fill="#d4af37"/>
-                            <circle cx="65" cy="45" r="3" fill="#d4af37"/>
-                        </svg>
-                    </div>
-                    <div class="brand-info">
-                        <h1 id="txt-app-title">
-                            هافانا گرل
-                            <span class="city-badge" id="txt-city-badge">بيجي</span>
-                        </h1>
-                        <p class="live-status">
-                            <span class="status-dot"></span>
-                            <span id="txt-live-status">مفتوح الآن - يستقبل طلباتكم</span>
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="header-actions">
-                    <!-- زر تبديل اللغة -->
-                    <button class="btn-circle btn-lang" id="btn-lang-toggle" onclick="toggleLanguage()">EN</button>
-                    <!-- زر الاتصال الهاتفي المباشر -->
-                    <a href="tel:07770022544" class="btn-circle" id="btn-call-direct" aria-label="Call Restaurant">
-                        <i class="fa-solid fa-phone"></i>
-                    </a>
-                </div>
-            </div>
-        </header>
-
-        <!-- البانر الترويجي الفاخر -->
-        <section class="promo-section">
-            <div class="promo-banner">
-                <span class="promo-badge" id="txt-promo-badge">عرض خاص بمناسبة الإطلاق</span>
-                <h2 class="promo-title" id="txt-promo-title">هافانا في قلب بيجي.. نكهة لا تُنسى!</h2>
-                <p class="promo-desc" id="txt-promo-desc">اطلب وجبتك المفضلة الآن واستمتع بخدمة التوصيل السريع إلى باب بيتك.</p>
-                <div class="promo-bg-icon">
-                    <i class="fa-solid fa-burger"></i>
-                </div>
-            </div>
-        </section>
-
-        <!-- شريط البحث المطور -->
-        <section class="search-section">
-            <div class="search-box">
-                <input type="text" class="search-input" id="search-input" placeholder="ابحث عن وجبتك المفضلة..." oninput="handleSearch(this.value)">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            </div>
-        </section>
-
-        <!-- أزرار الأقسام (تصفح أفقي) -->
-        <section class="filter-section">
-            <h3 class="filter-section-title" id="txt-filter-title">تصفح أقسام المنيو</h3>
-            <div class="category-tabs-wrapper no-scrollbar" id="category-tabs">
-                <!-- سيتم ملؤها ديناميكياً من data.js -->
+    <!-- 🎬 الشاشة الترحيبية المتحركة (Splash Screen) -->
+    <div id="splash-screen" class="fixed inset-0 bg-[#0d0d0d] z-[100] flex flex-col items-center justify-center p-6 transition-all duration-500">
+        <div class="text-center space-y-6 max-w-sm flex flex-col items-center animate-pulse-slow">
+            <!-- الشعار التجهيزي الفاخر لهافانا مطبق بدقة SVG الماروني -->
+            <div class="w-32 h-32 rounded-full bg-havana-red border-2 border-havana-gold flex items-center justify-center p-3 shadow-2xl shadow-havana-red/40">
+                <svg viewBox="0 0 100 100" class="w-full h-full text-white" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M42 22 C42 16, 58 16, 58 22" stroke-width="5" />
+                    <path d="M22 46 C22 26, 78 26, 78 46 Z" stroke-width="4.5" />
+                    <path d="M18 52 L82 52" stroke-width="3.5" />
+                    <path d="M24 58 C24 72, 76 72, 76 58 Z" stroke-width="4.5" />
+                    <line x1="32" y1="52" x2="32" y2="61" stroke-width="3" />
+                    <line x1="39" y1="52" x2="39" y2="64" stroke-width="3" />
+                    <line x1="46" y1="52" x2="46" y2="65" stroke-width="3" />
+                    <line x1="54" y1="52" x2="54" y2="65" stroke-width="3" />
+                    <line x1="61" y1="52" x2="61" y2="64" stroke-width="3" />
+                    <line x1="68" y1="52" x2="68" y2="61" stroke-width="3" />
+                </svg>
             </div>
             
-            <!-- أزرار فلترة إضافية (تاغات مخصصة) -->
-            <div class="tag-filters-wrapper no-scrollbar">
-                <button class="tag-filter-btn" id="tag-all" onclick="filterByTag('all')">
-                    <i class="fa-solid fa-list text-[10px]"></i> <span data-key="tag-all">الكل</span>
-                </button>
-                <button class="tag-filter-btn" id="tag-popular" onclick="filterByTag('popular')">
-                    <i class="fa-solid fa-fire text-[10px]"></i> <span data-key="tag-popular">الأكثر طلباً</span>
-                </button>
-                <button class="tag-filter-btn" id="tag-spicy" onclick="filterByTag('spicy')">
-                    <i class="fa-solid fa-pepper-hot text-[10px]"></i> <span data-key="tag-spicy">حار سبايسي</span>
-                </button>
-                <button class="tag-filter-btn" id="tag-value" onclick="filterByTag('value')">
-                    <i class="fa-solid fa-tags text-[10px]"></i> <span data-key="tag-value">وجبات توفير</span>
-                </button>
-            </div>
-        </section>
-
-        <!-- قائمة الطعام الكلية للوجبات -->
-        <main>
-            <div class="menu-items-grid" id="menu-items-container">
-                <!-- سيتم توليد الوجبات ديناميكياً بواسطة الجافاسكربت -->
-            </div>
-        </main>
-
-        <!-- شريط السلة العائم بالأسفل -->
-        <div class="cart-bar-fixed" id="cart-bar">
-            <div class="cart-bar-inner">
-                <div class="cart-bar-info">
-                    <div class="cart-bar-icon-container">
-                        <i class="fa-solid fa-shopping-basket"></i>
-                        <span class="cart-bar-badge" id="cart-badge-count">0</span>
-                    </div>
-                    <div class="cart-bar-texts">
-                        <span class="cart-bar-label" id="txt-cart-label">الحساب الإجمالي</span>
-                        <span class="cart-bar-price" id="cart-total-price">0 د.ع</span>
-                    </div>
-                </div>
-                
-                <button class="btn-checkout" onclick="openCheckoutModal()">
-                    <span id="txt-btn-checkout">مراجعة وتأكيد الطلب</span>
-                    <i class="fa-solid fa-arrow-left" id="checkout-arrow"></i>
-                </button>
+            <div class="space-y-1.5">
+                <h2 class="text-3xl font-black text-white tracking-wide">هافانا گرل</h2>
+                <p class="text-xs font-bold text-havana-gold uppercase tracking-widest">Havana Grill & Coffee</p>
+                <div class="h-[2px] w-16 bg-havana-gold mx-auto mt-3 rounded-full"></div>
             </div>
         </div>
 
-    </div>
-
-    <!-- 1. نافذة تفاصيل الوجبة المنبثقة (Meal Details Modal) -->
-    <div class="modal-overlay" id="meal-details-modal" onclick="closeModalOnOverlay(event, 'meal-details-modal')">
-        <div class="modal-content">
-            <div class="modal-header-nav">
-                <h3 class="modal-header-title" id="details-modal-title">تفاصيل الوجبة</h3>
-                <button class="modal-close-btn" onclick="closeModal('meal-details-modal')">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            
-            <div class="modal-body" id="details-modal-body">
-                <!-- محتوى تفاصيل الوجبة سيضاف ديناميكياً -->
-            </div>
-            
-            <div class="modal-footer">
-                <button class="btn-modal-cancel" id="txt-btn-close-details" onclick="closeModal('meal-details-modal')">إغلاق</button>
-                <button class="btn-modal-action" id="btn-add-from-details" onclick="addCurrentItemFromDetails()">إضافة للسلة</button>
-            </div>
+        <!-- مؤشر التحميل الدائري الفخم -->
+        <div class="absolute bottom-16 flex flex-col items-center gap-3">
+            <div class="w-10 h-10 border-3 border-havana-red border-t-transparent rounded-full animate-spin"></div>
+            <p class="text-[12px] text-gray-400 font-bold tracking-wide">جاري تحميل المنيو السحابي...</p>
         </div>
     </div>
 
-    <!-- 2. نافذة مراجعة وتأكيد الطلب المنبثقة (Checkout Modal) -->
-    <div class="modal-overlay" id="checkout-modal" onclick="closeModalOnOverlay(event, 'checkout-modal')">
-        <div class="modal-content">
-            <div class="modal-header-nav">
-                <h3 class="modal-header-title" id="txt-checkout-title">🛍️ مراجعة وتأكيد طلبك</h3>
-                <button class="modal-close-btn" onclick="closeModal('checkout-modal')">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            
-            <div class="modal-body">
-                <!-- ملخص السلة -->
+    <!-- حاوية الإشعارات المخصصة (Toast Notifications) -->
+    <div id="toast-container" class="fixed top-5 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 w-full max-w-xs pointer-events-none"></div>
+
+    <!-- Header (الرأس) -->
+    <header class="bg-[#0f0f0f]/95 backdrop-blur-md border-b border-havana-border sticky top-0 z-40 shadow-lg">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <!-- لوجو رأس المنيو -->
+                <div class="w-11 h-11 rounded-full bg-havana-red border border-havana-border flex items-center justify-center p-1.5 overflow-hidden shadow-md shadow-havana-red/20">
+                    <svg viewBox="0 0 100 100" class="w-full h-full text-white" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M42 22 C42 16, 58 16, 58 22" stroke-width="5" />
+                        <path d="M22 46 C22 26, 78 26, 78 46 Z" stroke-width="4.5" />
+                        <path d="M18 52 L82 52" stroke-width="3.5" />
+                        <path d="M24 58 C24 72, 76 72, 76 58 Z" stroke-width="4.5" />
+                        <line x1="32" y1="52" x2="32" y2="61" stroke-width="3" />
+                        <line x1="39" y1="52" x2="39" y2="64" stroke-width="3" />
+                        <line x1="46" y1="52" x2="46" y2="65" stroke-width="3" />
+                        <line x1="54" y1="52" x2="54" y2="65" stroke-width="3" />
+                        <line x1="61" y1="52" x2="61" y2="64" stroke-width="3" />
+                        <line x1="68" y1="52" x2="68" y2="61" stroke-width="3" />
+                    </svg>
+                </div>
                 <div>
-                    <h4 class="checkout-label" id="txt-checkout-summary-title">📌 سلتك الحالية:</h4>
-                    <div class="checkout-cart-summary" id="checkout-cart-items">
-                        <!-- عناصر السلة -->
-                    </div>
-                </div>
-
-                <!-- استمارة معلومات الزبون -->
-                <div class="checkout-form-group">
-                    <label class="checkout-label" for="customer-name"><span id="lbl-name">الاسم الكامل</span> <span>*</span></label>
-                    <input type="text" id="customer-name" class="checkout-input" placeholder="اكتب اسمك الثلاثي">
-                </div>
-
-                <div class="checkout-form-group">
-                    <label class="checkout-label" for="customer-phone"><span id="lbl-phone">رقم الموبايل</span> <span>*</span></label>
-                    <input type="tel" id="customer-phone" class="checkout-input text-left" placeholder="077XXXXXXXX" dir="ltr">
-                </div>
-
-                <div class="checkout-form-group">
-                    <label class="checkout-label" for="customer-address"><span id="lbl-address">العنوان بالتفصيل</span> <span>*</span></label>
-                    <input type="text" id="customer-address" class="checkout-input" placeholder="مثال: بيجي - الحي العسكري - قرب مسجد الهدى">
-                </div>
-
-                <div class="checkout-form-group">
-                    <label class="checkout-label" for="customer-notes"><span id="lbl-notes">ملاحظات إضافية (اختياري)</span></label>
-                    <input type="text" id="customer-notes" class="checkout-input" placeholder="بدون بصل، كثر كاتشب، الخ...">
-                </div>
-
-                <!-- تفاصيل الحساب الكلية -->
-                <div class="price-summary-box">
-                    <div class="price-summary-row">
-                        <span id="txt-summary-subtotal">مجموع الوجبات:</span>
-                        <span id="checkout-subtotal">0 د.ع</span>
-                    </div>
-                    <div class="price-summary-row">
-                        <span id="txt-summary-delivery">خدمة التوصيل لبيجي:</span>
-                        <span id="checkout-delivery">2,000 د.ع</span>
-                    </div>
-                    <div class="price-summary-row total">
-                        <span id="txt-summary-total">المجموع الكلي للحساب:</span>
-                        <span id="checkout-grand-total" class="grand-total-val">0 د.ع</span>
-                    </div>
+                    <h1 class="text-md font-black tracking-tight text-white flex items-center gap-1.5">
+                        هافانا گرل
+                        <span class="text-[10px] px-2 py-0.5 bg-havana-red text-white font-black rounded-full">بيجي</span>
+                    </h1>
+                    <p class="text-[10px] text-gray-400 flex items-center gap-1">
+                        <i class="fa-solid fa-circle text-emerald-500 text-[6px] animate-pulse"></i>
+                        مفتوح الآن - يستقبل طلباتكم
+                    </p>
                 </div>
             </div>
             
-            <div class="modal-footer">
-                <button class="btn-modal-cancel" id="txt-btn-modify-order" onclick="closeModal('checkout-modal')">تعديل الطلب</button>
-                <button class="btn-modal-action" id="btn-proceed-to-receipt" onclick="proceedToReceipt()" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);">
-                    <span id="txt-btn-generate-receipt">عرض الفاتورة وتأكيدها</span>
+            <div class="flex gap-1.5">
+                <!-- زر الإدارة -->
+                <button onclick="promptAdminLogin()" class="w-9 h-9 rounded-xl bg-havana-card border border-havana-border flex items-center justify-center text-havana-gold hover:bg-neutral-800 hover:text-white transition-all shadow-sm" title="لوحة التحكم">
+                    <i class="fa-solid fa-user-gear text-xs"></i>
+                </button>
+                <a href="tel:07770022544" class="w-9 h-9 rounded-xl bg-havana-card border border-havana-border flex items-center justify-center text-white hover:bg-neutral-800 transition-all shadow-sm">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- البانر الترويجي الفخم -->
+    <section class="max-w-md mx-auto w-full px-4 pt-4">
+        <div class="relative rounded-2xl overflow-hidden h-32 bg-gradient-to-l from-havana-red to-havana-darkRed flex items-center p-5 shadow-xl shadow-havana-red/5 border border-havana-red/20">
+            <div class="z-10 max-w-[70%]">
+                <span class="text-[8px] bg-black/45 text-havana-gold font-bold px-2 py-0.5 rounded uppercase tracking-wider">نظام الطلب المطور لبيجي</span>
+                <h2 class="text-md font-black text-white mt-1 leading-tight">اختر أطباقك المفضلة وأرسل طلبك فوراً</h2>
+                <p class="text-[10px] text-gray-200 mt-1">منيو تفاعلي ذكي وسريع لتأمين طلباتكم عبر الواتساب بدقة عالية.</p>
+            </div>
+            <div class="absolute -left-4 -bottom-6 opacity-15 text-white text-[130px] pointer-events-none">
+                <i class="fa-solid fa-burger"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- شريط البحث المطور -->
+    <section class="max-w-md mx-auto w-full px-4 pt-4">
+        <div class="relative">
+            <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="ابحث عن وجبتك المفضلة..." class="w-full bg-havana-card border border-havana-border rounded-xl py-2.5 pl-4 pr-10 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-havana-red focus:ring-1 focus:ring-havana-red transition-all">
+            <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-3.5 text-gray-500 text-xs"></i>
+        </div>
+    </section>
+
+    <!-- أزرار الفلترة للأقسام السريعة -->
+    <section class="max-w-md mx-auto w-full px-4 pt-4 sticky top-[67px] bg-[#0d0d0d] py-2.5 z-35 border-b border-havana-border/10">
+        <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+            <button onclick="filterCategory('all')" id="tab-all" class="category-tab active px-3.5 py-2 rounded-xl text-[11px] font-black transition-all whitespace-nowrap bg-havana-red text-white shadow-md shadow-havana-red/20">
+                ⭐ الكل
+            </button>
+            <button onclick="filterCategory('burger')" id="tab-burger" class="category-tab px-3.5 py-2 rounded-xl text-[11px] font-black transition-all whitespace-nowrap bg-havana-card text-gray-400 border border-havana-border">
+                🍔 البرگر
+            </button>
+            <button onclick="filterCategory('rizo')" id="tab-rizo" class="category-tab px-3.5 py-2 rounded-xl text-[11px] font-black transition-all whitespace-nowrap bg-havana-card text-gray-400 border border-havana-border">
+                🍛 الريزو
+            </button>
+            <button onclick="filterCategory('pizza')" id="tab-pizza" class="category-tab px-3.5 py-2 rounded-xl text-[11px] font-black transition-all whitespace-nowrap bg-havana-card text-gray-400 border border-havana-border">
+                🍕 البيتزا
+            </button>
+            <button onclick="filterCategory('zinger')" id="tab-zinger" class="category-tab px-3.5 py-2 rounded-xl text-[11px] font-black transition-all whitespace-nowrap bg-havana-card text-gray-400 border border-havana-border">
+                🍗 الكرسبي والزنجر
+            </button>
+            <button onclick="filterCategory('sides')" id="tab-sides" class="category-tab px-3.5 py-2 rounded-xl text-[11px] font-black transition-all whitespace-nowrap bg-havana-card text-gray-400 border border-havana-border">
+                🍟 المقبلات والمشروبات
+            </button>
+        </div>
+    </section>
+
+    <!-- حالة جلب البيانات السحابية -->
+    <div id="loading-state" class="max-w-md mx-auto w-full px-4 py-16 flex flex-col items-center justify-center gap-3">
+        <div class="w-9 h-9 border-3 border-havana-red border-t-transparent rounded-full animate-spin"></div>
+        <p class="text-[11px] text-gray-400">جاري تحميل الوجبات والأسعار الحية من السحابة...</p>
+    </div>
+
+    <!-- قائمة الطعام السحابية للزبائن -->
+    <main id="main-content" class="max-w-md mx-auto w-full px-4 mt-2 flex-grow hidden">
+        <div id="menu-items-container" class="space-y-4">
+            <!-- يتم توليدها ديناميكياً -->
+        </div>
+    </main>
+
+    <!-- شريط السلة العائم بالأسفل -->
+    <div id="cart-bar" class="fixed bottom-0 left-0 right-0 max-w-md mx-auto px-4 py-4 bg-gradient-to-t from-black via-[#0d0d0d] to-transparent z-40 transform translate-y-full transition-transform duration-300 ease-out">
+        <div class="bg-gradient-to-l from-havana-red to-havana-darkRed rounded-2xl p-4 shadow-2xl flex items-center justify-between border border-havana-red/30">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white relative">
+                    <i class="fa-solid fa-shopping-basket text-lg"></i>
+                    <span id="cart-badge-count" class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-havana-gold text-black font-extrabold text-[10px] rounded-full flex items-center justify-center border-2 border-havana-red">0</span>
+                </div>
+                <div>
+                    <span class="text-[10px] text-gray-200 block">الحساب الإجمالي</span>
+                    <span id="cart-total-price" class="text-sm font-black text-white">0 د.ع</span>
+                </div>
+            </div>
+            
+            <button onclick="openConfirmModal()" class="px-4 py-2 bg-white text-havana-red font-black text-xs rounded-xl flex items-center gap-1.5 hover:bg-gray-150 active:scale-95 transition-all shadow-md shadow-black/10">
+                مراجعة وتأكيد الطلب 
+                <i class="fa-solid fa-arrow-left text-[10px]"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- نافذة مراجعة وتأكيد الطلب للزبون (تضم نوع الطلب والمدخلات الديناميكية) -->
+    <div id="confirm-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-neutral-900 border border-havana-border w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl animate-scale-up flex flex-col max-h-[90vh]">
+            <div class="bg-gradient-to-l from-havana-red to-havana-darkRed p-4 text-center relative flex-shrink-0 border-b border-havana-red/20">
+                <h3 class="font-black text-white text-base">🛍️ مراجعة وتأكيد طلبك</h3>
+                <p class="text-[10px] text-gray-200 mt-1">يرجى مراجعة الوجبات وتأكيد تفاصيل التوصيل</p>
+                <button onclick="closeConfirmModal()" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-5 overflow-y-auto no-scrollbar space-y-4 text-right flex-grow">
+                <!-- قائمة المواد المشتراة -->
+                <div>
+                    <h4 class="text-xs font-bold text-gray-400 mb-2 border-b border-neutral-800 pb-1 flex items-center gap-1">
+                        <i class="fa-solid fa-receipt text-havana-gold"></i> سلتك الحالية:
+                    </h4>
+                    <div id="modal-cart-items" class="space-y-2 max-h-36 overflow-y-auto pr-1"></div>
+                </div>
+
+                <!-- ميزة تحديد نوع الطلب (صالة / سفري / توصيل) -->
+                <div>
+                    <h4 class="text-xs font-bold text-gray-400 mb-2 border-b border-neutral-800 pb-1 flex items-center gap-1">
+                        <i class="fa-solid fa-utensils text-havana-gold"></i> نوع الطلب:
+                    </h4>
+                    <div class="grid grid-cols-3 gap-2 pt-1">
+                        <button onclick="selectOrderType('dine-in')" id="type-dine-in" class="order-type-btn py-2 rounded-xl text-[10px] font-black transition-all flex flex-col items-center gap-1 bg-neutral-800 border border-neutral-700 text-gray-400">
+                            <i class="fa-solid fa-chair text-xs"></i>
+                            داخل الصالة
+                        </button>
+                        <button onclick="selectOrderType('takeaway')" id="type-takeaway" class="order-type-btn py-2 rounded-xl text-[10px] font-black transition-all flex flex-col items-center gap-1 bg-neutral-800 border border-neutral-700 text-gray-400">
+                            <i class="fa-solid fa-bag-shopping text-xs"></i>
+                            سفري استلام
+                        </button>
+                        <button onclick="selectOrderType('delivery')" id="type-delivery" class="order-type-btn py-2 rounded-xl text-[10px] font-black transition-all flex flex-col items-center gap-1 bg-havana-red border border-havana-red text-white shadow-md shadow-havana-red/20 active">
+                            <i class="fa-solid fa-motorcycle text-xs"></i>
+                            توصيل خارجي
+                        </button>
+                    </div>
+                </div>
+
+                <!-- استمارة بيانات الزبون (تتغير تلقائياً حسب نوع الطلب) -->
+                <div class="space-y-2.5">
+                    <h4 class="text-xs font-bold text-gray-400 border-b border-neutral-800 pb-1 flex items-center gap-1">
+                        <i class="fa-solid fa-address-card text-havana-gold"></i> معلومات الاستلام:
+                    </h4>
+                    
+                    <div>
+                        <label class="text-[10px] text-gray-400 block mb-1">الاسم الكامل <span class="text-havana-red">*</span></label>
+                        <input type="text" id="customer-name" placeholder="اكتب اسمك الثلاثي" class="w-full bg-neutral-800 border border-neutral-750 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red transition-all">
+                    </div>
+
+                    <!-- يظهر في حالة (توصيل وسفري) فقط -->
+                    <div id="field-phone">
+                        <label class="text-[10px] text-gray-400 block mb-1">رقم الموبايل <span class="text-havana-red">*</span></label>
+                        <input type="tel" id="customer-phone" placeholder="077XXXXXXXX" class="w-full bg-neutral-800 border border-neutral-750 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red transition-all text-left font-mono" dir="ltr">
+                    </div>
+
+                    <!-- يظهر في حالة (صالة) فقط -->
+                    <div id="field-table" class="hidden">
+                        <label class="text-[10px] text-gray-400 block mb-1">رقم الطاولة <span class="text-havana-red">*</span></label>
+                        <input type="number" id="customer-table" placeholder="اكتب رقم طاولتك داخل الصالة" class="w-full bg-neutral-800 border border-neutral-750 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red transition-all text-center font-bold">
+                    </div>
+
+                    <!-- يظهر في حالة (توصيل) فقط -->
+                    <div id="field-address">
+                        <label class="text-[10px] text-gray-400 block mb-1">العنوان بالتفصيل <span class="text-havana-red">*</span></label>
+                        <input type="text" id="customer-address" placeholder="مثال: بيجي - الحي العسكري - قرب جامع الهدى" class="w-full bg-neutral-800 border border-neutral-750 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red transition-all">
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] text-gray-400 block mb-1">ملاحظات التجهيز (اختياري)</label>
+                        <input type="text" id="customer-notes" placeholder="بدون طماطم، صلصة إضافية، الخ..." class="w-full bg-neutral-800 border border-neutral-750 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red transition-all">
+                    </div>
+                </div>
+
+                <!-- الفاتورة والأسعار الكلية -->
+                <div class="bg-neutral-950 p-3.5 rounded-xl border border-neutral-800 space-y-2 text-xs">
+                    <div class="flex justify-between text-gray-400">
+                        <span>مجموع الوجبات:</span>
+                        <span id="modal-subtotal" class="font-bold text-white">0 د.ع</span>
+                    </div>
+                    <div class="flex justify-between text-gray-400" id="row-delivery-fee">
+                        <span>خدمة التوصيل لبيجي:</span>
+                        <span id="modal-delivery-fee-display" class="text-white font-bold">2,000 د.ع</span>
+                    </div>
+                    <div class="flex justify-between font-black text-white border-t border-neutral-800 pt-2 text-sm">
+                        <span>المجموع النهائي:</span>
+                        <span id="modal-grandtotal" class="text-havana-gold">0 د.ع</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-neutral-950 border-t border-neutral-800 flex gap-2 flex-shrink-0">
+                <button onclick="closeConfirmModal()" class="w-1/3 py-2.5 bg-neutral-800 hover:bg-neutral-750 text-gray-300 font-bold text-xs rounded-xl border border-neutral-700 transition-colors">
+                    تعديل الطلب
+                </button>
+                <button onclick="submitOrderToWhatsApp()" class="w-2/3 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-lg shadow-emerald-600/10 active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    تأكيد وإرسال للواتساب
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- 3. نافذة الفاتورة البصرية النهائية (Visual Receipt Modal) -->
-    <div class="modal-overlay" id="receipt-modal" onclick="closeModalOnOverlay(event, 'receipt-modal')">
-        <div class="modal-content" style="max-height: 90vh;">
-            <div class="modal-header-nav" style="background: #000; border-bottom: 1px solid var(--accent-gold);">
-                <h3 class="modal-header-title" id="txt-receipt-modal-title" style="color: var(--accent-gold);">🧾 فاتورة طلبك البصرية</h3>
-                <button class="modal-close-btn" onclick="closeModal('receipt-modal')">
-                    <i class="fa-solid fa-xmark"></i>
+    <!-- نافذة تسجيل دخول الإدارة بكلمة المرور -->
+    <div id="login-modal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-neutral-900 border border-neutral-800 w-full max-w-xs rounded-2xl overflow-hidden shadow-2xl p-5 text-center animate-scale-up">
+            <div class="w-11 h-11 rounded-full bg-havana-red/10 text-havana-red flex items-center justify-center mx-auto mb-3 border border-havana-red/20">
+                <i class="fa-solid fa-lock text-sm"></i>
+            </div>
+            <h3 class="font-black text-white text-base">دخول لوحة تحكم الإدارة</h3>
+            <p class="text-[10px] text-gray-400 mt-1">الرمز السري الأول للمطعم هو: <b class="text-havana-gold">1234</b></p>
+            
+            <input type="password" id="admin-pin-input" placeholder="أدخل رمز الـ PIN" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-3 py-2.5 text-center text-sm text-white tracking-widest mt-4 focus:outline-none focus:border-havana-red">
+            
+            <div class="flex gap-2 mt-4">
+                <button onclick="closeLoginModal()" class="w-1/2 py-2.5 bg-neutral-800 text-gray-400 font-bold text-xs rounded-xl border border-neutral-700 hover:bg-neutral-750 transition-colors">إلغاء</button>
+                <button onclick="verifyAdminLogin()" class="w-1/2 py-2.5 bg-havana-red text-white font-black text-xs rounded-xl shadow-md shadow-havana-red/20 hover:bg-havana-darkRed transition-all">دخول</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- لوحة تحكم الإدارة الكاملة (Admin Dashboard) -->
+    <div id="admin-dashboard-modal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-neutral-900 border border-havana-border w-full max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh] animate-scale-up">
+            <!-- الرأس للوحة التحكم -->
+            <div class="bg-neutral-950 p-4 border-b border-havana-border flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-gears text-havana-gold text-xs"></i>
+                    <span class="font-black text-xs text-white">إدارة المنيو والرمز السري والأسعار</span>
+                </div>
+                <button onclick="closeAdminDashboard()" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
-            
-            <div class="modal-body" style="background-color: #111;">
+
+            <!-- محتوى لوحة التحكم السحابية المحدث -->
+            <div class="p-5 overflow-y-auto no-scrollbar space-y-5 text-right flex-grow">
                 
-                <!-- حاوية الفاتورة الجذابة (التي يمكن تصويرها للشاشة) -->
-                <div class="receipt-visual-wrapper" id="receipt-capture-area">
-                    <div class="receipt-header">
-                        <div class="receipt-logo">HAVANA</div>
-                        <h2>هافانا گرل - بيجي</h2>
-                        <p>هاتف التوصيل: 07770022544</p>
-                        <p id="receipt-date-time">التاريخ والوقت: --/--/---- --:--</p>
-                    </div>
+                <!-- قسم إعدادات سعر التوصيل والرمز السري -->
+                <div class="bg-neutral-950 p-4 rounded-xl border border-neutral-800 space-y-3">
+                    <h4 class="text-xs font-black text-havana-gold flex items-center gap-1.5 border-b border-neutral-800 pb-1">
+                        <i class="fa-solid fa-wrench text-[10px]"></i> ⚙️ إعدادات التحكم العامة للمطعم
+                    </h4>
                     
-                    <div class="receipt-meta-grid">
+                    <div class="grid grid-cols-2 gap-2">
                         <div>
-                            <span id="rec-lbl-name">الزبون:</span>
-                            <span id="receipt-client-name">-</span>
+                            <label class="text-[9px] text-gray-400 block mb-1">الرمز السري الجديد</label>
+                            <input type="password" id="admin-pin-new" placeholder="الرمز الجديد" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red text-center">
                         </div>
                         <div>
-                            <span id="rec-lbl-phone">الهاتف:</span>
-                            <span id="receipt-client-phone">-</span>
-                        </div>
-                        <div style="grid-column: span 2; margin-top: 0.25rem;">
-                            <span id="rec-lbl-address">العنوان:</span>
-                            <span id="receipt-client-address">-</span>
-                        </div>
-                        <div style="grid-column: span 2; margin-top: 0.25rem;" id="receipt-client-notes-wrapper">
-                            <span id="rec-lbl-notes">ملاحظات:</span>
-                            <span id="receipt-client-notes">-</span>
+                            <label class="text-[9px] text-gray-400 block mb-1">سعر التوصيل لبيجي (د.ع)</label>
+                            <input type="number" id="admin-delivery-input" placeholder="مثال: 2000" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red text-center font-bold">
                         </div>
                     </div>
-                    
-                    <table class="receipt-table">
-                        <thead>
-                            <tr>
-                                <th style="text-align: right;" id="th-item">الوجبة</th>
-                                <th style="text-align: center; width: 40px;" id="th-qty">العدد</th>
-                                <th style="text-align: left; width: 80px;" id="th-price">السعر</th>
-                            </tr>
-                        </thead>
-                        <tbody id="receipt-table-body">
-                            <!-- صفوف الوجبات -->
-                        </tbody>
-                    </table>
-                    
-                    <div class="receipt-table-totals">
-                        <div class="receipt-total-row">
-                            <span id="rec-lbl-subtotal">مجموع المواد:</span>
-                            <span id="receipt-subtotal">0 د.ع</span>
-                        </div>
-                        <div class="receipt-total-row">
-                            <span id="rec-lbl-delivery">خدمة التوصيل:</span>
-                            <span id="receipt-delivery">2,000 د.ع</span>
-                        </div>
-                        <div class="receipt-total-row final">
-                            <span id="rec-lbl-grandtotal">المجموع النهائي:</span>
-                            <span id="receipt-grandtotal">0 د.ع</span>
-                        </div>
-                    </div>
-                    
-                    <div class="receipt-footer-notes">
-                        <p id="rec-txt-thanks">❤️ شكراً لاختياركم هافانا گرل بيجي - بالعافية مقدماً ❤️</p>
-                        <p style="font-size: 0.5rem; margin-top: 0.25rem; color: #888;">تم إنشاء الفاتورة إلكترونياً عبر موقع هافانا</p>
+
+                    <div class="flex gap-2 pt-1">
+                        <button onclick="saveAdminSettings()" class="w-full py-2 bg-havana-red hover:bg-havana-darkRed text-white font-black text-xs rounded-xl transition-all shadow-md shadow-havana-red/10">
+                            حفظ إعدادات الأمان وسعر التوصيل سحابياً
+                        </button>
                     </div>
                 </div>
-                
-                <!-- أزرار الإجراءات النهائية -->
-                <button class="btn-whatsapp-send" onclick="submitOrderToWhatsApp()">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span id="txt-btn-confirm-whatsapp">تأكيد وإرسال للواتساب</span>
-                </button>
-                
-                <button class="btn-download-receipt" onclick="printReceipt()">
-                    <i class="fa-solid fa-print"></i>
-                    <span id="txt-btn-print">تحميل / طباعة الفاتورة</span>
-                </button>
+
+                <!-- فورم إضافة / تعديل وجبة -->
+                <div class="bg-neutral-950 p-4 rounded-xl border border-neutral-800 space-y-3">
+                    <h4 id="admin-form-title" class="text-xs font-black text-havana-gold flex items-center gap-1.5">
+                        <i class="fa-solid fa-plus-circle text-[10px]"></i> إضافة وجبة جديدة للمنيو
+                    </h4>
+                    
+                    <input type="hidden" id="admin-meal-id">
+                    
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="text-[9px] text-gray-400 block mb-1">اسم الوجبة</label>
+                            <input type="text" id="admin-meal-name" placeholder="مثال: ريزو دبل جبن" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red">
+                        </div>
+                        <div>
+                            <label class="text-[9px] text-gray-400 block mb-1">السعر (د.ع)</label>
+                            <input type="number" id="admin-meal-price" placeholder="مثال: 5000" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red text-left font-bold">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="text-[9px] text-gray-400 block mb-1">وصف الوجبة بالتفصيل</label>
+                        <input type="text" id="admin-meal-desc" placeholder="المكونات، التفاصيل، الخ..." class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red">
+                    </div>
+
+                    <div>
+                        <label class="text-[9px] text-gray-400 block mb-1">القسم / التصنيف</label>
+                        <select id="admin-meal-category" onchange="updateGalleryFilter()" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-havana-red">
+                            <option value="burger">🍔 البرگر</option>
+                            <option value="rizo">🍛 الريزو</option>
+                            <option value="pizza">🍕 البيتزا</option>
+                            <option value="zinger">🍗 الكرسبي والزنجر</option>
+                            <option value="sides">🍟 المقبلات والمشروبات</option>
+                        </select>
+                    </div>
+
+                    <!-- اختيار الصور ومعالجتها -->
+                    <div class="border border-neutral-800 p-3 rounded-xl bg-neutral-900 space-y-3">
+                        <div class="flex items-center justify-between border-b border-neutral-850 pb-2">
+                            <label class="text-[10px] font-bold text-gray-300 flex items-center gap-1.5">
+                                <i class="fa-regular fa-image text-havana-gold"></i> صورة الوجبة
+                            </label>
+                            <span class="text-[9px] text-gray-500">رفع صورة أو الاختيار من المعرض</span>
+                        </div>
+
+                        <!-- أزرار الاختيار والرفع المباشر -->
+                        <div class="grid grid-cols-1 gap-2">
+                            <label class="cursor-pointer py-2 bg-neutral-800 hover:bg-neutral-750 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 border border-neutral-700 transition-colors">
+                                <i class="fa-solid fa-camera text-havana-gold"></i>
+                                خذ صورة من الهاتف / اختر ملف
+                                <input type="file" id="admin-file-input" accept="image/*" class="hidden" onchange="processImageUpload(event)">
+                            </label>
+                        </div>
+
+                        <!-- مكتبة المعرض الجاهزة -->
+                        <div>
+                            <span class="text-[9px] text-gray-400 block mb-1">أو اختر صورة جاهزة عالية الجودة للقسم:</span>
+                            <div id="admin-image-gallery" class="grid grid-cols-4 gap-1.5 max-h-20 overflow-y-auto no-scrollbar py-1">
+                                <!-- يتم توليد الصور ديناميكياً -->
+                            </div>
+                        </div>
+
+                        <!-- حقل الرابط ومعاينة الصورة الحية -->
+                        <div class="flex gap-2 items-center">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden bg-neutral-950 border border-neutral-800 flex-shrink-0 flex items-center justify-center relative">
+                                <img id="admin-image-preview" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=100&q=80" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-grow">
+                                <input type="text" id="admin-meal-image" oninput="updatePreviewFromUrl(this.value)" placeholder="رابط صورة خارجي" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-3 py-2 text-[10px] text-white focus:outline-none focus:border-havana-red">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 pt-1">
+                        <button onclick="clearAdminForm()" id="btn-cancel-edit" class="hidden w-1/3 py-2 bg-neutral-800 text-gray-400 font-bold text-xs rounded-xl border border-neutral-700 transition-colors">إلغاء</button>
+                        <button onclick="saveMeal()" id="btn-save-meal" class="flex-grow py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs rounded-xl transition-colors shadow-md shadow-emerald-600/10">حفظ وإطلاق على السحابة</button>
+                    </div>
+                </div>
+
+                <!-- قائمة الوجبات الحالية لإدارتها (تعديل أو حذف) -->
+                <div>
+                    <h4 class="text-xs font-black text-gray-400 mb-3 border-b border-neutral-800 pb-1 flex items-center gap-1">
+                        <i class="fa-solid fa-list-check text-havana-gold"></i> إدارة وتعديل المأكولات الحالية:
+                    </h4>
+                    <div id="admin-meals-list" class="space-y-2.5 max-h-60 overflow-y-auto pr-1 no-scrollbar">
+                        <!-- توليد الوجبات المتوفرة مع أزرار الحذف والتعديل -->
+                    </div>
+                </div>
 
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    <!-- Firebase SDK Modules والمنطق الكامل للربط بالسحابة -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // قاعدة البيانات الأولية
+        const initialDefaultMeals = [
+            { id: "1", category: 'burger', name: 'برگر كلاسك (عادي)', desc: 'لحم بقري مشوي، جبن تشيدر، خيار مخلل، طماطة مع صوص كلاسك المميز خبز هافانا الخاص', price: 5000, image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80' },
+            { id: "2", category: 'burger', name: 'برگر كلاسك (وجبة)', desc: 'برگر كلاسك اللذيذ مع البطاطس المقرمشة المتبلة، مقبلات مشكلة ومشروب بارد من اختيارك', price: 6000, image: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=500&q=80' },
+            { id: "3", category: 'burger', name: 'برگر لاند (وجبة)', desc: 'برجر لاند الدبل الفخم مع أصابع البطاطا المقلية، مقبلات هافانا الفاخرة وبيبسي مثلج', price: 7000, image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80' },
+            { id: "4", category: 'rizo', name: 'ريزو هافانا المميز', desc: 'أرز ريزو هافانا المطهو بالتوابل السرية، يعلوه قطع دجاج كرسبي وصوص الزنجر اللذيذ', price: 4000, image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=500&q=80' },
+            { id: "5", category: 'rizo', name: 'ريزو بالجبن والداينمت', desc: 'أرز ريزو هافانا بقطع الكرسبي مغمور بجبنة الموزاريلا السائحة وصوص الداينمت الحار', price: 4000, image: 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=500&q=80' },
+            { id: "6", category: 'pizza', name: 'بيتزا لحم بقري', desc: 'عجينة هافانا الهشة، صلصة الطماطم الغنية، شرائح اللحم البقري وجبنة الموزاريلا الفاخرة', price: 8000, image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80' },
+            { id: "7", category: 'sides', name: 'مقبلات موزاريلّا فرايز', desc: 'أصابع بطاطس مقرمشة مغطاة بطبقة غنية من الموزاريلا المذابة والبهارات الإيطالية', price: 4000, image: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=80' },
+            { id: "8", category: 'sides', name: 'بيبسي بارد قوطية', desc: 'مشروب بيبسي غازي بارد ومثلج لترطيب وجبتك الفاخرة', price: 1500, image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80' }
+        ];
+
+        // مكتبة صور أكلات جاهزة عالية الجودة
+        const foodImagesLibrary = {
+            burger: [
+                { title: 'برغر كلاسيك ليف', url: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80' },
+                { title: 'برغر لحم دبل فخم', url: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80' },
+                { title: 'برغر دجاج مقرمش كرسبي', url: 'https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=500&q=80' },
+                { title: 'ميني سلايدرز برغر', url: 'https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?auto=format&fit=crop&w=500&q=80' }
+            ],
+            rizo: [
+                { title: 'ريزو كلاسيك ذهبي', url: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=500&q=80' },
+                { title: 'ريزو سبايسي بالخلطة', url: 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=500&q=80' },
+                { title: 'ريزو دجاج مقرمش ريزو', url: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80' }
+            ],
+            pizza: [
+                { title: 'بيتزا لحم بقري ومشروم', url: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80' },
+                { title: 'بيتزا دجاج فخمة رانش', url: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=500&q=80' },
+                { title: 'بيتزا مارغريتا كلاسيكية', url: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=500&q=80' },
+                { title: 'بيتزا بيبروني فخمة', url: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80' }
+            ],
+            zinger: [
+                { title: 'ساندويش زنجر حار سبايسي', url: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=500&q=80' },
+                { title: 'قطع كرسبي مقرمشة ذهبية', url: 'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=500&q=80' }
+            ],
+            sides: [
+                { title: 'بطاطس مقلية ذهبية', url: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=80' },
+                { title: 'حلقات بصل مقلية', url: 'https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=500&q=80' },
+                { title: 'أجنحة باربكيو حارة', url: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80' },
+                { title: 'بيبسي كولا مثلج', url: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80' }
+            ]
+        };
+
+        // متغيرات النظام
+        let db = null;
+        let auth = null;
+        let isFirebaseConnected = false;
+        let appId = "default-app-id";
+
+        let s_meals = [];
+        let s_cart = {}; // { mealId: qty }
+        let s_adminPin = "1234";
+        let s_deliveryFee = 2000;
+        let s_orderType = 'delivery';
+        let s_activeCategory = 'all';
+        let s_searchQuery = '';
+
+        // قراءة الإعدادات السحابية
+        let firebaseConfig = null;
+        try {
+            if (typeof __firebase_config !== "undefined" && __firebase_config) {
+                firebaseConfig = typeof __firebase_config === "string" ? JSON.parse(__firebase_config) : __firebase_config;
+            }
+        } catch (e) {
+            console.error("Firebase config parse error", e);
+        }
+
+        // تهيئة التوصيل وقاعدة البيانات
+        const initDatabase = async () => {
+            if (firebaseConfig) {
+                try {
+                    const app = initializeApp(firebaseConfig);
+                    auth = getAuth(app);
+                    db = getFirestore(app);
+                    appId = typeof __app_id !== "undefined" ? __app_id : "default-app-id";
+                    await signInAnonymously(auth);
+                    isFirebaseConnected = true;
+                    console.log("Connected to Firebase Firestore");
+                } catch (error) {
+                    console.error("Firebase Auth/Firestore connection failed. Using fallback.", error);
+                }
+            }
+
+            // الاستماع للإعدادات
+            db_onSettingsChange((settings) => {
+                s_adminPin = settings.pin || "1234";
+                s_deliveryFee = settings.deliveryFee !== undefined ? Number(settings.deliveryFee) : 2000;
+                updateCartBar();
+                document.getElementById('admin-delivery-input').value = s_deliveryFee;
+            });
+
+            // الاستماع للوجبات
+            db_onMealsChange((mealsList) => {
+                if (mealsList.length === 0) {
+                    db_seedDefaultMeals();
+                    return;
+                }
+                s_meals = mealsList;
+                
+                // إخفاء الـ splash screen
+                setTimeout(() => {
+                    const splash = document.getElementById('splash-screen');
+                    if (splash) {
+                        splash.classList.add('fade-out-screen');
+                        setTimeout(() => splash.remove(), 600);
+                    }
+                }, 1000);
+
+                document.getElementById('loading-state').classList.add('hidden');
+                document.getElementById('main-content').classList.remove('hidden');
+
+                renderMenu();
+                renderAdminMealsList();
+            });
+        };
+
+        // دوال طبقة الحفظ السحابي والمحلي
+        const db_onSettingsChange = (callback) => {
+            if (isFirebaseConnected) {
+                const settingsDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'settings', 'admin');
+                return onSnapshot(settingsDocRef, (docSnap) => {
+                    if (docSnap.exists()) {
+                        callback(docSnap.data());
+                    } else {
+                        callback({ pin: "1234", deliveryFee: 2000 });
+                    }
+                });
+            } else {
+                const loadSettings = () => {
+                    const local = localStorage.getItem('havana_settings');
+                    if (local) return JSON.parse(local);
+                    return { pin: "1234", deliveryFee: 2000 };
+                };
+                callback(loadSettings());
+                window.addEventListener('storage', (e) => {
+                    if (e.key === 'havana_settings') callback(loadSettings());
+                });
+                return () => {};
+            }
+        };
+
+        const db_saveSettings = async (settings) => {
+            if (isFirebaseConnected) {
+                const settingsDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'settings', 'admin');
+                await setDoc(settingsDocRef, settings);
+            } else {
+                localStorage.setItem('havana_settings', JSON.stringify(settings));
+                window.dispatchEvent(new Event('storage'));
+            }
+        };
+
+        const db_onMealsChange = (callback) => {
+            if (isFirebaseConnected) {
+                const mealsCollectionRef = collection(db, 'artifacts', appId, 'public', 'data', 'meals');
+                return onSnapshot(mealsCollectionRef, (snapshot) => {
+                    const mealsList = [];
+                    snapshot.forEach((doc) => {
+                        mealsList.push({ id: doc.id, ...doc.data() });
+                    });
+                    callback(mealsList);
+                });
+            } else {
+                const loadMeals = () => {
+                    const local = localStorage.getItem('havana_meals');
+                    if (local) return JSON.parse(local);
+                    return [];
+                };
+                callback(loadMeals());
+                window.addEventListener('storage', (e) => {
+                    if (e.key === 'havana_meals') callback(loadMeals());
+                });
+                return () => {};
+            }
+        };
+
+        const db_saveMeal = async (mealId, mealData) => {
+            if (isFirebaseConnected) {
+                const mealsCollectionRef = collection(db, 'artifacts', appId, 'public', 'data', 'meals');
+                if (mealId) {
+                    const mealDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'meals', mealId);
+                    await setDoc(mealDocRef, mealData);
+                } else {
+                    const newMealDocRef = doc(mealsCollectionRef);
+                    await setDoc(newMealDocRef, mealData);
+                }
+            } else {
+                let meals = JSON.parse(localStorage.getItem('havana_meals') || '[]');
+                if (mealId) {
+                    const idx = meals.findIndex(m => m.id === mealId);
+                    if (idx !== -1) {
+                        meals[idx] = { id: mealId, ...mealData };
+                    }
+                } else {
+                    const newId = Date.now().toString();
+                    meals.push({ id: newId, ...mealData });
+                }
+                localStorage.setItem('havana_meals', JSON.stringify(meals));
+                window.dispatchEvent(new Event('storage'));
+            }
+        };
+
+        const db_deleteMeal = async (mealId) => {
+            if (isFirebaseConnected) {
+                const mealDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'meals', mealId);
+                await deleteDoc(mealDocRef);
+            } else {
+                let meals = JSON.parse(localStorage.getItem('havana_meals') || '[]');
+                meals = meals.filter(m => m.id !== mealId);
+                localStorage.setItem('havana_meals', JSON.stringify(meals));
+                window.dispatchEvent(new Event('storage'));
+            }
+        };
+
+        const db_seedDefaultMeals = async () => {
+            if (isFirebaseConnected) {
+                for (const meal of initialDefaultMeals) {
+                    const mealDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'meals', meal.id);
+                    await setDoc(mealDocRef, {
+                        name: meal.name,
+                        category: meal.category,
+                        desc: meal.desc,
+                        price: meal.price,
+                        image: meal.image
+                    });
+                }
+            } else {
+                localStorage.setItem('havana_meals', JSON.stringify(initialDefaultMeals));
+                window.dispatchEvent(new Event('storage'));
+            }
+        };
+
+        // عرض الإشعارات الذكية
+        window.showToast = function(message, type = "success") {
+            const container = document.getElementById('toast-container');
+            if (!container) return;
+            const toast = document.createElement('div');
+            toast.className = `p-3.5 rounded-xl text-xs font-bold text-white shadow-xl transform transition-all duration-300 translate-y-2 flex items-center gap-2 pointer-events-auto ${
+                type === 'success' ? 'bg-emerald-600 border border-emerald-500' : 'bg-havana-red border border-havana-darkRed'
+            }`;
+            toast.innerHTML = `
+                <i class="fa-solid ${type === 'success' ? 'fa-circle-check' : 'fa-circle-exclamation'} text-sm"></i>
+                <span>${message}</span>
+            `;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', '-translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        };
+
+        // تصفية وعرض المنتجات
+        window.filterCategory = function(catId) {
+            s_activeCategory = catId;
+            document.querySelectorAll('.category-tab').forEach(btn => {
+                btn.classList.remove('bg-havana-red', 'text-white', 'shadow-md', 'shadow-havana-red/20');
+                btn.classList.add('bg-havana-card', 'text-gray-400', 'border', 'havana-border');
+            });
+            const activeBtn = document.getElementById(`tab-${catId}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-havana-card', 'text-gray-400', 'border', 'havana-border');
+                activeBtn.classList.add('bg-havana-red', 'text-white', 'shadow-md', 'shadow-havana-red/20');
+            }
+            renderMenu();
+        };
+
+        window.handleSearch = function(query) {
+            s_searchQuery = query.toLowerCase().trim();
+            renderMenu();
+        };
+
+        // عرض قائمة وجبات المستخدم
+        const renderMenu = () => {
+            const container = document.getElementById('menu-items-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const filtered = s_meals.filter(meal => {
+                const matchCat = s_activeCategory === 'all' || meal.category === s_activeCategory;
+                const matchQuery = meal.name.toLowerCase().includes(s_searchQuery) || meal.desc.toLowerCase().includes(s_searchQuery);
+                return matchCat && matchQuery;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-gray-500 text-xs">
+                        <i class="fa-solid fa-cookie-bite text-3xl mb-3 text-neutral-800"></i>
+                        <p>لا توجد وجبات تطابق خياراتك حالياً.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(meal => {
+                const qtyInCart = s_cart[meal.id] || 0;
+                const card = document.createElement('div');
+                card.className = 'premium-card bg-havana-card border border-havana-border rounded-2xl overflow-hidden flex flex-col relative';
+                
+                card.innerHTML = `
+                    <div class="relative w-full h-44 overflow-hidden bg-neutral-900">
+                        <img src="${meal.image}" alt="${meal.name}" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=300&q=80'">
+                        <span class="absolute top-3 left-3 bg-black/70 backdrop-blur-sm border border-havana-gold/30 text-havana-gold font-black text-xs px-2.5 py-1 rounded-lg">
+                            ${Number(meal.price).toLocaleString()} د.ع
+                        </span>
+                    </div>
+                    
+                    <div class="p-4 flex-grow flex flex-col justify-between text-right">
+                        <div class="space-y-1">
+                            <h3 class="font-extrabold text-sm text-white">${meal.name}</h3>
+                            <p class="text-[11px] text-gray-400 leading-relaxed">${meal.desc}</p>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-[9px] px-2 py-0.5 bg-neutral-800 text-gray-400 rounded-md border border-neutral-850">
+                                <i class="fa-regular fa-clock text-[8px]"></i> 15 دقيقة
+                            </span>
+                            
+                            <div class="flex items-center">
+                                ${qtyInCart === 0 ? `
+                                    <button onclick="addToCart('${meal.id}')" class="px-3.5 py-1.5 bg-havana-red hover:bg-havana-darkRed text-white text-[11px] font-black rounded-lg transition-all flex items-center gap-1 active:scale-95 shadow-sm shadow-havana-red/20">
+                                        <i class="fa-solid fa-plus text-[9px]"></i> إضافة
+                                    </button>
+                                ` : `
+                                    <div class="flex items-center bg-neutral-800 border border-neutral-700 rounded-lg overflow-hidden">
+                                        <button onclick="removeFromCart('${meal.id}')" class="w-7 h-7 flex items-center justify-center bg-neutral-800 text-gray-400 hover:text-white transition-colors">
+                                            <i class="fa-solid fa-minus text-[9px]"></i>
+                                        </button>
+                                        <span class="px-2.5 font-bold text-xs text-white select-none">${qtyInCart}</span>
+                                        <button onclick="addToCart('${meal.id}')" class="w-7 h-7 flex items-center justify-center bg-neutral-800 text-gray-400 hover:text-white transition-colors">
+                                            <i class="fa-solid fa-plus text-[9px]"></i>
+                                        </button>
+                                    </div>
+                                `}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        };
+
+        // إضافة وتعديل السلة
+        window.addToCart = function(mealId) {
+            s_cart[mealId] = (s_cart[mealId] || 0) + 1;
+            updateCartBar();
+            renderMenu();
+            showToast("تمت إضافة الوجبة إلى السلة");
+        };
+
+        window.removeFromCart = function(mealId) {
+            if (s_cart[mealId]) {
+                s_cart[mealId]--;
+                if (s_cart[mealId] <= 0) {
+                    delete s_cart[mealId];
+                }
+                updateCartBar();
+                renderMenu();
+                showToast("تم تقليل كمية الوجبة");
+            }
+        };
+
+        const updateCartBar = () => {
+            const bar = document.getElementById('cart-bar');
+            const badge = document.getElementById('cart-badge-count');
+            const priceText = document.getElementById('cart-total-price');
+            if (!bar || !badge || !priceText) return;
+
+            let totalQty = 0;
+            let totalPrice = 0;
+
+            for (const id in s_cart) {
+                const meal = s_meals.find(m => m.id === id);
+                if (meal) {
+                    totalQty += s_cart[id];
+                    totalPrice += Number(meal.price) * s_cart[id];
+                }
+            }
+
+            if (totalQty > 0) {
+                badge.innerText = totalQty;
+                priceText.innerText = totalPrice.toLocaleString() + " د.ع";
+                bar.classList.remove('translate-y-full');
+            } else {
+                bar.classList.add('translate-y-full');
+            }
+        };
+
+        // معالجة وإعداد مودل الفاتورة
+        window.openConfirmModal = function() {
+            const modal = document.getElementById('confirm-modal');
+            const listContainer = document.getElementById('modal-cart-items');
+            if (!modal || !listContainer) return;
+
+            listContainer.innerHTML = '';
+
+            let subtotal = 0;
+            for (const id in s_cart) {
+                const meal = s_meals.find(m => m.id === id);
+                if (meal) {
+                    const cost = Number(meal.price) * s_cart[id];
+                    subtotal += cost;
+
+                    const row = document.createElement('div');
+                    row.className = 'flex items-center justify-between text-xs py-1.5 border-b border-neutral-800/40 text-gray-300';
+                    row.innerHTML = `
+                        <div class="flex items-center gap-1.5">
+                            <span class="font-extrabold text-white">${meal.name}</span>
+                            <span class="text-[10px] text-gray-500 font-bold">x${s_cart[id]}</span>
+                        </div>
+                        <span class="font-bold text-white">${cost.toLocaleString()} د.ع</span>
+                    `;
+                    listContainer.appendChild(row);
+                }
+            }
+
+            document.getElementById('modal-subtotal').innerText = subtotal.toLocaleString() + " د.ع";
+            
+            // استرجاع بيانات العميل السابقة
+            const customer = JSON.parse(localStorage.getItem('havana_customer') || '{}');
+            if (customer.name) document.getElementById('customer-name').value = customer.name;
+            if (customer.phone) document.getElementById('customer-phone').value = customer.phone;
+            if (customer.address) document.getElementById('customer-address').value = customer.address;
+            if (customer.notes) document.getElementById('customer-notes').value = customer.notes;
+            if (customer.table) document.getElementById('customer-table').value = customer.table;
+
+            selectOrderType(s_orderType);
+            modal.classList.remove('hidden');
+        };
+
+        window.closeConfirmModal = function() {
+            document.getElementById('confirm-modal').classList.add('hidden');
+        };
+
+        window.selectOrderType = function(type) {
+            s_orderType = type;
+            document.querySelectorAll('.order-type-btn').forEach(btn => {
+                btn.classList.remove('bg-havana-red', 'border-havana-red', 'text-white', 'shadow-md', 'shadow-havana-red/20', 'active');
+                btn.classList.add('bg-neutral-800', 'border-neutral-700', 'text-gray-400');
+            });
+            const activeBtn = document.getElementById(`type-${type}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-neutral-800', 'border-neutral-700', 'text-gray-400');
+                activeBtn.classList.add('bg-havana-red', 'border-havana-red', 'text-white', 'shadow-md', 'shadow-havana-red/20', 'active');
+            }
+
+            // تعديل الحقول الظاهرة
+            const fieldPhone = document.getElementById('field-phone');
+            const fieldTable = document.getElementById('field-table');
+            const fieldAddress = document.getElementById('field-address');
+            const rowDeliveryFee = document.getElementById('row-delivery-fee');
+
+            if (type === 'delivery') {
+                fieldPhone.classList.remove('hidden');
+                fieldAddress.classList.remove('hidden');
+                fieldTable.classList.add('hidden');
+                rowDeliveryFee.classList.remove('hidden');
+            } else if (type === 'takeaway') {
+                fieldPhone.classList.remove('hidden');
+                fieldAddress.classList.add('hidden');
+                fieldTable.classList.add('hidden');
+                rowDeliveryFee.classList.add('hidden');
+            } else if (type === 'dine-in') {
+                fieldPhone.classList.add('hidden');
+                fieldAddress.classList.add('hidden');
+                fieldTable.classList.remove('hidden');
+                rowDeliveryFee.classList.add('hidden');
+            }
+
+            calculateGrandTotal();
+        };
+
+        const calculateGrandTotal = () => {
+            let subtotal = 0;
+            for (const id in s_cart) {
+                const meal = s_meals.find(m => m.id === id);
+                if (meal) subtotal += Number(meal.price) * s_cart[id];
+            }
+
+            const deliveryFee = s_orderType === 'delivery' ? s_deliveryFee : 0;
+            const grand = subtotal + deliveryFee;
+
+            document.getElementById('modal-delivery-fee-display').innerText = deliveryFee.toLocaleString() + " د.ع";
+            document.getElementById('modal-grandtotal').innerText = grand.toLocaleString() + " د.ع";
+        };
+
+        // تأكيد الطلب وإرساله للواتساب
+        window.submitOrderToWhatsApp = function() {
+            const name = document.getElementById('customer-name').value.trim();
+            const phone = document.getElementById('customer-phone').value.trim();
+            const address = document.getElementById('customer-address').value.trim();
+            const notes = document.getElementById('customer-notes').value.trim();
+            const table = document.getElementById('customer-table').value.trim();
+
+            if (!name) {
+                showToast("يرجى كتابة الاسم الكامل لتأكيد الطلب!", "error");
+                return;
+            }
+
+            if (s_orderType !== 'dine-in' && !phone) {
+                showToast("يرجى كتابة رقم الموبايل للتواصل!", "error");
+                return;
+            }
+
+            if (s_orderType === 'delivery' && !address) {
+                showToast("يرجى إدخال عنوان التوصيل بالتفصيل!", "error");
+                return;
+            }
+
+            if (s_orderType === 'dine-in' && !table) {
+                showToast("يرجى إدخال رقم الطاولة في الصالة!", "error");
+                return;
+            }
+
+            // حفظ معلومات العميل محلياً
+            localStorage.setItem('havana_customer', JSON.stringify({ name, phone, address, notes, table }));
+
+            const restaurantNumber = "9647770022544";
+            let itemsText = '';
+            let subtotal = 0;
+            let counter = 1;
+
+            for (const id in s_cart) {
+                const meal = s_meals.find(m => m.id === id);
+                if (meal) {
+                    const cost = Number(meal.price) * s_cart[id];
+                    subtotal += cost;
+                    itemsText += `  ${counter}. ${meal.name} (x${s_cart[id]}) 👈 ${cost.toLocaleString()} د.ع\n`;
+                    counter++;
+                }
+            }
+
+            const deliveryFee = s_orderType === 'delivery' ? s_deliveryFee : 0;
+            const grand = subtotal + deliveryFee;
+
+            let orderTypeStr = '';
+            let locationDetails = '';
+
+            if (s_orderType === 'delivery') {
+                orderTypeStr = '🛵 توصيل خارجي لبيجي';
+                locationDetails = `📍 *العنوان بالتفصيل:* ${address}\n📞 *رقم الهاتف:* ${phone}`;
+            } else if (s_orderType === 'takeaway') {
+                orderTypeStr = '🛍️ سفري استلام من المطعم';
+                locationDetails = `📞 *رقم الهاتف:* ${phone}`;
+            } else {
+                orderTypeStr = '🍽️ داخل الصالة';
+                locationDetails = `🪑 *رقم الطاولة:* ${table}`;
+            }
+
+            const textMessage = 
+`🛍️ *طلب مأكولات جديد من الموقع الإلكتروني*
+==========================
+
+👤 *اسم الزبون:* ${name}
+⚙️ *نوع الطلب:* ${orderTypeStr}
+${locationDetails}
+${notes ? `📝 *ملاحظات التجهيز:* ${notes}\n` : ''}
+--------------------------
+🛒 *تفاصيل الوجبات والطلبات:*
+${itemsText}
+--------------------------
+💵 *مجموع الحساب:* ${subtotal.toLocaleString()} د.ع
+🛵 *خدمة التوصيل:* ${deliveryFee.toLocaleString()} د.ع
+💰 *المجموع الكلي:* *${grand.toLocaleString()} د.ع*
+
+==========================
+🛵 يرجى تأكيد الطلب من طرفكم ومباشرة التجهيز. شكراً لكم!`;
+
+            const waURL = `https://wa.me/${restaurantNumber}?text=${encodeURIComponent(textMessage)}`;
+            window.open(waURL, '_blank');
+
+            // تصفير السلة
+            s_cart = {};
+            updateCartBar();
+            renderMenu();
+            closeConfirmModal();
+            showToast("تم إرسال الطلب للواتساب وتصفير السلة بنجاح!");
+        };
+
+        // 🔐 بوابات لوحة التحكم للمشرف
+        window.promptAdminLogin = function() {
+            document.getElementById('login-modal').classList.remove('hidden');
+        };
+
+        window.closeLoginModal = function() {
+            document.getElementById('login-modal').classList.add('hidden');
+            document.getElementById('admin-pin-input').value = '';
+        };
+
+        window.verifyAdminLogin = function() {
+            const entered = document.getElementById('admin-pin-input').value.trim();
+            if (entered === s_adminPin) {
+                closeLoginModal();
+                openAdminDashboard();
+                showToast("تم الدخول للوحة التحكم السحابية بنجاح!");
+            } else {
+                showToast("الرمز السري المكتوب خاطئ!", "error");
+            }
+        };
+
+        const openAdminDashboard = () => {
+            document.getElementById('admin-dashboard-modal').classList.remove('hidden');
+            document.getElementById('admin-delivery-input').value = s_deliveryFee;
+            updateGalleryFilter();
+            renderAdminMealsList();
+        };
+
+        window.closeAdminDashboard = function() {
+            document.getElementById('admin-dashboard-modal').classList.add('hidden');
+            clearAdminForm();
+        };
+
+        // حفظ الإعدادات العامة للمشرف
+        window.saveAdminSettings = async function() {
+            const newPin = document.getElementById('admin-pin-new').value.trim();
+            const deliveryInput = document.getElementById('admin-delivery-input').value.trim();
+
+            if (deliveryInput === "") {
+                showToast("يرجى إدخال سعر التوصيل أولاً!", "error");
+                return;
+            }
+
+            const payload = {
+                deliveryFee: Number(deliveryInput),
+                pin: newPin !== "" ? newPin : s_adminPin
+            };
+
+            try {
+                await db_saveSettings(payload);
+                showToast("تم تحديث إعدادات الأمان وسعر التوصيل سحابياً!");
+                document.getElementById('admin-pin-new').value = '';
+            } catch (error) {
+                console.error("Settings save error", error);
+                showToast("حدث خطأ أثناء حفظ الإعدادات السحابية", "error");
+            }
+        };
+
+        // معالجة وضغط الصورة
+        window.processImageUpload = function(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            showToast("جاري ضغط ومعالجة الصورة...", "success");
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+                    const maxDim = 350;
+
+                    if (width > height) {
+                        if (width > maxDim) {
+                            height *= maxDim / width;
+                            width = maxDim;
+                        }
+                    } else {
+                        if (height > maxDim) {
+                            width *= maxDim / height;
+                            height = maxDim;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    const compressedBase64 = canvas.toDataURL('image/jpeg', 0.75);
+
+                    document.getElementById('admin-meal-image').value = compressedBase64;
+                    document.getElementById('admin-image-preview').src = compressedBase64;
+                    showToast("📸 تم معالجة الصورة بنجاح!");
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        };
+
+        window.updatePreviewFromUrl = function(url) {
+            if (url.trim()) {
+                document.getElementById('admin-image-preview').src = url;
+            }
+        };
+
+        // تحديث المعرض الجاهز
+        window.updateGalleryFilter = function() {
+            const categorySelect = document.getElementById('admin-meal-category');
+            const galleryContainer = document.getElementById('admin-image-gallery');
+            if (!categorySelect || !galleryContainer) return;
+
+            const cat = categorySelect.value;
+            galleryContainer.innerHTML = '';
+
+            const list = foodImagesLibrary[cat] || [];
+            list.forEach(item => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'w-full h-11 rounded-lg overflow-hidden border border-neutral-800 bg-neutral-950 focus:border-havana-gold transition-all relative group';
+                btn.onclick = () => {
+                    document.getElementById('admin-meal-image').value = item.url;
+                    document.getElementById('admin-image-preview').src = item.url;
+                    showToast(`📸 تم اختيار صورة: ${item.title}`);
+                };
+                btn.innerHTML = `<img src="${item.url}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform">`;
+                galleryContainer.appendChild(btn);
+            });
+        };
+
+        // حفظ / تعديل وجبة
+        window.saveMeal = async function() {
+            const id = document.getElementById('admin-meal-id').value;
+            const name = document.getElementById('admin-meal-name').value.trim();
+            const price = document.getElementById('admin-meal-price').value.trim();
+            const desc = document.getElementById('admin-meal-desc').value.trim();
+            const category = document.getElementById('admin-meal-category').value;
+            const image = document.getElementById('admin-meal-image').value.trim();
+
+            if (!name || !price || !desc) {
+                showToast("يرجى تعبئة كافة حقول الوجبة المطلوبة!", "error");
+                return;
+            }
+
+            const imgUrl = image !== "" ? image : 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=300&q=80';
+
+            const payload = {
+                name,
+                price: Number(price),
+                desc,
+                category,
+                image: imgUrl
+            };
+
+            try {
+                await db_saveMeal(id || null, payload);
+                showToast(id ? "تم تعديل الوجبة سحابياً بنجاح!" : "تمت إضافة الوجبة الجديدة للمنيو بنجاح!");
+                clearAdminForm();
+            } catch (error) {
+                console.error("Meal save error", error);
+                showToast("فشلت عملية حفظ الوجبة", "error");
+            }
+        };
+
+        window.editMeal = function(mealId) {
+            const meal = s_meals.find(m => m.id === mealId);
+            if (!meal) return;
+
+            document.getElementById('admin-meal-id').value = meal.id;
+            document.getElementById('admin-meal-name').value = meal.name;
+            document.getElementById('admin-meal-price').value = meal.price;
+            document.getElementById('admin-meal-desc').value = meal.desc;
+            document.getElementById('admin-meal-category').value = meal.category;
+            document.getElementById('admin-meal-image').value = meal.image;
+            document.getElementById('admin-image-preview').src = meal.image;
+
+            document.getElementById('admin-form-title').innerHTML = `<i class="fa-solid fa-pen-to-square"></i> تعديل وجبة: ${meal.name}`;
+            document.getElementById('btn-save-meal').innerText = "تحديث الوجبة سحابياً";
+            document.getElementById('btn-cancel-edit').classList.remove('hidden');
+            updateGalleryFilter();
+        };
+
+        window.clearAdminForm = function() {
+            document.getElementById('admin-meal-id').value = '';
+            document.getElementById('admin-meal-name').value = '';
+            document.getElementById('admin-meal-price').value = '';
+            document.getElementById('admin-meal-desc').value = '';
+            document.getElementById('admin-meal-image').value = '';
+            document.getElementById('admin-image-preview').src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=100&q=80';
+            
+            document.getElementById('admin-form-title').innerHTML = `<i class="fa-solid fa-plus-circle"></i> إضافة وجبة جديدة للمنيو`;
+            document.getElementById('btn-save-meal').innerText = "حفظ وإطلاق على السحابة";
+            document.getElementById('btn-cancel-edit').classList.add('hidden');
+            updateGalleryFilter();
+        };
+
+        window.deleteMeal = async function(mealId) {
+            if (confirm("هل أنت متأكد من رغبتك بحذف هذه الوجبة نهائياً من المنيو؟")) {
+                try {
+                    await db_deleteMeal(mealId);
+                    showToast("تم حذف الوجبة بنجاح!");
+                    clearAdminForm();
+                } catch (error) {
+                    console.error("Meal delete error", error);
+                    showToast("حدث خطأ أثناء محاولة حذف الوجبة", "error");
+                }
+            }
+        };
+
+        // عرض قائمة وجبات الإدارة
+        const renderAdminMealsList = () => {
+            const container = document.getElementById('admin-meals-list');
+            if (!container) return;
+            container.innerHTML = '';
+
+            s_meals.forEach(meal => {
+                const row = document.createElement('div');
+                row.className = 'flex items-center justify-between p-2.5 bg-neutral-950 border border-neutral-800 rounded-xl';
+                row.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <img src="${meal.image}" class="w-10 h-10 object-cover rounded-lg border border-neutral-850" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=50&q=80'">
+                        <div class="text-right">
+                            <span class="text-xs font-bold text-white block">${meal.name}</span>
+                            <span class="text-[10px] text-havana-gold">${Number(meal.price).toLocaleString()} د.ع</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-1.5">
+                        <button onclick="editMeal('${meal.id}')" class="w-8 h-8 rounded-lg bg-blue-600/10 text-blue-500 hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center">
+                            <i class="fa-solid fa-pen text-[10px]"></i>
+                        </button>
+                        <button onclick="deleteMeal('${meal.id}')" class="w-8 h-8 rounded-lg bg-havana-red/10 text-havana-red hover:bg-havana-red hover:text-white transition-all flex items-center justify-center">
+                            <i class="fa-solid fa-trash text-[10px]"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+        };
+
+        // تشغيل نظام التحميل وقاعدة البيانات
+        window.addEventListener('DOMContentLoaded', () => {
+            initDatabase();
+        });
+    </script>
 </body>
 </html>
